@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siêu Thị Trực Tuyến</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .wrapper {
+            width: 1200px;
+            margin: 30px auto;
+        }
+        .header {
+            background: rgb(98, 98, 232);
+            padding: 1em 0;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+            text-align: center;
+        }
+        .nav {
+            background-color: aquamarine;
+            list-style: none;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav li {
+            padding: 10px 10px;
+        }
+        .nav li a {
+            text-decoration: none;
+            color: white;
+        }
+        .nav li a:hover {
+            color: black;
+        }
+        .banner-account-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .account {
+            width: 29%;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .account h3 {
+            background-color: #00c4ff;
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+        .account .login-form {
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            flex-grow: 1;
+        }
+        .account .login-form input[type="text"],
+        .account .login-form input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .account .login-form input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: #00c4ff;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+
+        }
+
+        
+.login-form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.login-form ul li {
+    margin-bottom: 10px;
+}
+
+.login-form ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-form ul li a:hover {
+    text-decoration: underline;
+}
+.account ul {
+    padding: 5px;
+    color: #007bff ;
+}
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+            padding: 20px 0;
+        }
+        .card {
+            border: 1px solid gray;
+            padding: 7px;
+            text-align: center;
+            background-color: white;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .card-price {
+            font-size: 15px;
+            color: red;
+            padding: 8px;
+            font-weight: bold;
+        }
+        .thumb img {
+            width: 100%;
+            height: auto;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .sidebar {
+            width: 300px;
+            margin: 10px;
+        }
+        .sidebar h3 {
+            background-color: #00c4ff;
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: white;
+        }
+        .sidebar ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar ul li:last-child {
+            border-bottom: none;
+        }
+      
+     .sp {
+    margin-top: 20px;
+}
+
+.card-grid1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.card1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    transition:box-shadow 0.3s;
+}
+
+.card1:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-thumb1 img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content-title {
+    font-size: 14px;
+}
+
+.card-content-title a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s;
+}
+
+.card-content-title a:hover {
+    color: #007bff;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content,
+.footer-links,
+.footer-policies,
+.footer-social {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.footer-address {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-policies h4,
+.footer-social h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul,
+.footer-policies ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-policies li {
+    margin-bottom: 5px;
+}
+
+.footer-links a,
+.footer-policies a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover,
+.footer-policies a:hover {
+    text-decoration: underline;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">Siêu Thị Trực Tuyến</div>
+        <ul class="nav">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Danh mục</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Bình luận</a></li>
+        </ul>
+        <div class="banner-account-container">
+            <div class="banner">
+                <img src="images/3.jpg" alt="Banner Image">
+            </div>
+            <div class="account">
+                <h3>Tài khoản</h3>
+                <div class="login-form">
+                    <form action="#" method="post">
+                        <label for="username">Tên đăng nhập</label>
+                        <input type="text" id="username" name="username">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" id="password" name="password">
+                        <input type="submit" value="Đăng nhập">
+                    </form>
+                    <ul>
+                        <label for="">Ghi nhớ</label>
+                        <input type="checkbox">
+                    </ul>
+                    <ul>
+                        <li><a href="#">Câu hỏi bảo mật</a></li>
+                        <li><a href="#">Quên mật khẩu</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="thumb"><a href="chitiet.html"><img src="images/1.jpg" alt="Samsung J4"></a></div>
+                        <div class="card-title">Samsung J4</div>
+                        <div class="card-price">$300</div>
+                    </div>
+                    <div class="card">
+                        <div class="thumb"><img src="images/1.jpg" alt="Samsung J4"></div>
+                        <div class="card-title">Samsung J4</div>
+                        <div class="card-price">$300</div>
+                    </div>
+                    <div class="card">
+                        <div class="thumb"><img src="images/1.jpg" alt="Samsung J4"></div>
+                        <div class="card-title">Samsung J4</div>
+                        <div class="card-price">$300</div>
+                    </div>
+                    <div class="card">
+                        <div class="thumb"><img src="images/1.jpg" alt="Samsung J4"></div>
+                        <div class="card-title">Samsung J4</div>
+                        <div class="card-price">$300</div>
+                    </div>
+                    <div class="card">
+                        <div class="thumb"><img src="images/1.jpg" alt="Samsung J4"></div>
+                        <div class="card-title">Samsung J4</div>
+                        <div class="card-price">$300</div>
+                    </div>
+                    <div class="card">
+                        <div class="thumb"><img src="images/1.jpg" alt="Samsung J4"></div>
+                        <div class="card-title">Samsung J4</div>
+                        <div class="card-price">$300</div>
+                    </div>
+                    <div class="card">
+                        <div class="thumb"><img src="images/1.jpg" alt="Samsung J4"></div>
+                        <div class="card-title">Samsung J4</div>
+                        <div class="card-price">$300</div>
+                    </div>
+                    <div class="card">
+                        <div class="thumb"><img src="images/1.jpg" alt="Samsung J4"></div>
+                        <div class="card-title">Samsung J4</div>
+                        <div class="card-price">$300</div>
+                    </div>
+                    <div class="card">
+                        <div class="thumb"><img src="images/1.jpg" alt="Samsung J4"></div>
+                        <div class="card-title">Samsung J4</div>
+                        <div class="card-price">$300</div>
+                    </div>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <h3>Danh mục</h3>
+                <ul>
+                    <li><a href="#">Đồng hồ</a></li>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Ipad</a></li>
+                    <li><a href="#">Tivi</a></li>
+                </ul>
+                <div class="sp">
+                    <h3>Sản phẩm bán chạy</h3>
+                <div class="card-grid1">
+                    <div class="card1">
+                        <div class="card-thumb1">
+                            <img src="images/2.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                           <div class="card-content-title"> <a href="">đồng hồ đeo tay nữ</a></div>
+                        </div>
+                    </div>
+                    <div class="card1">
+                        <div class="card-thumb1">
+                            <img src="images/2.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                           <div class="card-content-title"> <a href="">đồng hồ đeo tay nữ</a></div>
+                        </div>
+                    </div>
+                    <div class="card1">
+                        <div class="card-thumb1">
+                            <img src="images/2.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                           <div class="card-content-title"> <a href="">đồng hồ đeo tay nữ</a></div>
+                        </div>
+                    </div>
+                    <div class="card1">
+                        <div class="card-thumb1">
+                            <img src="images/2.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                           <div class="card-content-title"> <a href="">đồng hồ đeo tay nữ</a></div>
+                        </div>    
+                </div>
+                </div>
+                <div></div>
+            </aside>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-content">
+                    <img src="img/FPTShop_logo.jpg" alt="FPT Shop" class="footer-logo">
+                    <p class="footer-address">Công Ty Điện Tử FPT Số 1 Việt Nam<br>
+                    Trụ Sở: 123 Trần Duy Hưng, Cầu Giấy, Hà Nội<br>
+                    Giấy ĐKKD số 123456789 do Sở Kế Hoạch và Đầu Tư Thành Phố Hà Nội cấp ngày 01/01/2020</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Về chúng tôi</h4>
+                    <ul>
+                        <li><a href="#">Giới thiệu về FptShop</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Câu chuyện</a></li>
+                    </ul>
+                </div>
+                <div class="footer-policies">
+                    <h4>Chính sách</h4>
+                    <ul>
+                        <li><a href="#">Chính sách khách hàng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Kết nối với chúng tôi</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    </div>
+</body>
+</html>
